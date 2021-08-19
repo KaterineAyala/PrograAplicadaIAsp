@@ -1,0 +1,49 @@
+﻿@model List<Asp.Models.ClsPersona>
+@{
+    ViewBag.Title = "VistalistadoPersona";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>VistalistadoPersona</h2>
+<h2>@ViewBag.EnviandoNombre</h2>
+
+@using (Html.BeginForm("VistalistadoPersona", "Persona"))
+{
+    <label for="nombre">Nombre</label>
+    <input type="text" name="nombre">
+
+    <input type="submit">
+           }
+
+
+    <table class="table table-hover">
+        <thead>
+        <th>
+            Id
+
+        </th>
+        <th>
+            Nombre
+
+        </th>
+
+        </thead>
+
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+
+                <tr>
+
+                    <td>item.ID</td>
+                    <td>item.Nombre</td>
+
+                </tr>
+
+            }
+
+
+        </tbody>
+    </table>
+
